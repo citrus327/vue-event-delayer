@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'UndoWrapper',
+  name: 'EventDelayer',
   props: {
     delay: {
       type: Number,
