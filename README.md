@@ -30,8 +30,12 @@ You can import the library and use it as a plugin.
     <EventDelayer 
       :delay="5000" 
       ref="event-delayer" 
-      slot-scope="{ registerAndExecute }">
-      <div v-for="todo in todoList" :key="todo.id">
+      slot-scope="{ registerAndExecute }"
+    >
+      <div 
+        v-for="todo in todoList" 
+        :key="todo.id"
+      >
         <span>{{ todo.name }}</span>
         <button @click="registerAndExecute(removeTodo)">Remove Todo</button>
       </div>
@@ -50,6 +54,9 @@ export default {
   methods: {
     removeTodo () {
       // this function need to return a Promise
+      return new Promise((resolve, reject) => {
+        yourRemoveTodoApiCall().then(resolve).catch(reject)
+      })
     }
   }
 }
