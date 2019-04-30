@@ -1,7 +1,6 @@
 {
   "name": "vue-event-delayer",
   "version": "0.1.0",
-  "private": true,
   "main": "./dist/vue-event-delayer.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
