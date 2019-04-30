@@ -15,11 +15,17 @@ export default {
   },
   render (h) {
     return h('div', {
-      class: 'undo-wrapper',
+      class: 'event-delayer',
     },this.$scopedSlots.default({
+      register: this.register,
+      cancel: this.cancel,
+      cancelAll: this.cancelAll,
+      execute: this.execute,
+      executeAll: this.executeAll,
       isTaskPending: this.isTaskPending,
       registerAndExecute: this.registerAndExecute,
-      cancel: this.cancel
+      flush: this.flush,
+      flushAll: this.flushAll,
     }))
   },
   methods: {

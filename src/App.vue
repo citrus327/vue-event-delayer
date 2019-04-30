@@ -31,9 +31,9 @@ export default {
   },
   data () {
     return {
-      tasks: [],
       delay: 5000,
       count: 0,
+      taskId: 0
     }
   },
   methods: {
@@ -42,8 +42,9 @@ export default {
         return new Promise((resolve) => {
           this.count++
           resolve()
-        }, Math.random() * 1000)
-      })
+        })
+      }, this.taskId)
+      this.taskId++
     }
   }
 }
