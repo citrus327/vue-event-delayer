@@ -23,6 +23,13 @@ This component is my solution to it.
 
 You can import the library and use it as a plugin.
 
+```javascript
+import Vue from 'vue'
+import EventDelayer from 'vue-event-delayer'
+
+Vue.use(EventDelayer)
+```
+
 ## Basic Usage
 ```javascript
 <template>
