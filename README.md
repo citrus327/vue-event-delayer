@@ -17,15 +17,15 @@ a clean and managable way.
 This component is my solution to it.
 
 ## Installation
-```
+```bash
   npm install vue-event-delayer --save
 ```
 
 You can import the library and use it as a plugin.
 
 ## Basic Usage
-```
-  <template>
+```javascript
+<template>
   <div id="app">
     <EventDelayer 
       :delay="5000" 
