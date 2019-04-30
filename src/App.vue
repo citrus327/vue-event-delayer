@@ -1,11 +1,20 @@
 <template>
   <div id="app">
-    <div>
-      <label>Current Count:</label>
-      <span> {{ count }} </span>
+    <div class="main">
+      <div>
+        <label>Delay:</label>
+        <span>
+          <input type="number" v-model.number="delay"/>
+        </span>
+      </div>
+
+      <div style="margin-top: 50px">
+        <label>Current Count:</label>
+        <span> {{ count }} </span>
+      </div>
     </div>
-    
-    <EventDelayer :delay="1000" ref="event-delayer">
+
+    <EventDelayer :delay="delay" ref="event-delayer">
       <button @click="addTask()">
         Add Task
       </button>
@@ -23,6 +32,7 @@ export default {
   data () {
     return {
       tasks: [],
+      delay: 5000,
       count: 0,
     }
   },
@@ -32,7 +42,7 @@ export default {
         return new Promise((resolve) => {
           this.count++
           resolve()
-        })
+        }, Math.random() * 1000)
       })
     }
   }
@@ -44,8 +54,9 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 300px;
+  margin: 60px auto;
+  text-align: left;
 }
 </style>
